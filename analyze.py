@@ -3,7 +3,21 @@ import csv
 
 """
 
-TODOs:
+This script analyzes subway entrances in Berlin. 
+
+It outputs a csv file that allows us to rank each property in Berlin by its proximity (or lack thereof) to the closest subway station.
+
+All distances are as-the-crow-flies. 
+
+Some logic is very obviously pulled straight from Python documentation. ("Spamwriter," for example.) No claim of originality is made here.
+
+See README.md at https://github.com/patrickmaynard/playing-with-berlin-subways for more information, inspiration, etc.,.
+
+
+
+COMPLETED TODOs:
+x Import logic from https://github.com/patrickmaynard/playing-with-qgis-python/blob/master/test-eight.py
+x Update references to layer files so they don't reference NYC layers.
 x Get rid of "centroid" reference, since both layers are points now -- actually, this does no harm. Leave it as-is.
 x Fix fields that are printed.
 x Fix labels on the csv file.
