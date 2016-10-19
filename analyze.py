@@ -7,11 +7,13 @@ This script analyzes subway entrances in Berlin.
 
 It outputs a csv file that allows us to rank each property in Berlin by its proximity (or lack thereof) to the closest subway station.
 
+To analyse a useful number of properties, set the argument on the last line to something very high -- a million is usually safe.
+
 All distances are as-the-crow-flies. 
 
 Some logic is very obviously pulled straight from Python documentation. ("Spamwriter," for example.) No claim of originality is made here.
 
-See README.md at https://github.com/patrickmaynard/playing-with-berlin-subways for more information, inspiration, etc.,.
+See README.md at https://github.com/patrickmaynard/playing-with-berlin-subways for more information on finding shapefiles, a few selective credits, inspiration, etc.,.
 
 
 
