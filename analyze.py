@@ -6,10 +6,11 @@ import csv
 TODOs:
 x Get rid of "centroid" reference, since both layers are points now -- actually, this does no harm. Leave it as-is.
 x Fix fields that are printed.
--- Fix labels on the csv file.
--- Fix fields that are dumped to the csv file.
--- Turn the csv-writing line back on.
--- See if this thing works!
+x Fix labels on the csv file.
+x Fix fields that are dumped to the csv file.
+x Add UTF8 encoding for street names.
+x Turn the csv-writing line back on.
+x See if this thing works!
 
 """
 
@@ -59,13 +60,14 @@ class Snobbery(object):
         with open('/Users/patrickmaynard/Desktop/eggs.csv', 'wb') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=',',
                                         quotechar='"', quoting=csv.QUOTE_NONNUMERIC)
-            spamwriter.writerow(['Address', 'Lat','Lon', 'Distance'])
+            spamwriter.writerow(['STN','HNR', 'Lat','Lon', 'Distance'])
             for feature in features:
                 if counter < rowLimit:
                     #print feature['name']
                     print feature['hnr']
                     print feature['stn']
-                    #spamwriter.writerow([feature['Address'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
+                    print Snobbery.calculateDistance(feature, layerEntrances)
+                    spamwriter.writerow([feature['stn'].encode('utf8'),feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
                 counter += 1
 
         
