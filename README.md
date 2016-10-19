@@ -17,6 +17,8 @@ This task was inspired by I Quant NY:
 
 http://iquantny.tumblr.com/post/99544282749/found-the-manhattan-apartment-thats-the-farthest
 
+I copied tons of stuff from stack overflow, the QGIS docs and the python docs, including (but not necessarily limited to) the Haversine distance function, the csv writer, the layer-loading logic, etc.,. -- I just snapped it all together into something that functions pretty well for my purpose. 
+
 # Making it work
 
 To make this thing go, you'll need the two .shp files described above. Got them? Good.  
@@ -33,5 +35,5 @@ Then update the location for eggs.csv so that it points at your location of choi
 
 Now set the argument in the final line (calling the Snobbery.importAndAnalyze() function) to something much higher than 5 -- a million is usually safe, since most cities do not have anywhere near a million properties.
 
-Now hit the "run script" button and go take a nap. The script should eventually output a nice csv showing how far each property is from its nearest subway station. 
+Now hit the QGIS "run script" button and go take a nap. The script should eventually output a nice csv showing how far each property is from its nearest subway station. 
 
