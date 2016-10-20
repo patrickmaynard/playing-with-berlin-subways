@@ -85,9 +85,11 @@ class Snobbery(object):
                     print Snobbery.calculateDistance(feature, layerEntrances)
                     try:
                         encodedStn = feature['stn'].encode('utf8')
-                    catch(e):
+                    except PlaceholderError:
+                        print "This placeholder logic will never be called."
+                    else:
                         encodedStn = ""
-                    spamwriter.writerow(encodedStn,feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
+                    spamwriter.writerow([encodedStn,feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
 
                 counter += 1
 
