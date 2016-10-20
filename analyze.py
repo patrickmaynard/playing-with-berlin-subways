@@ -83,7 +83,12 @@ class Snobbery(object):
                     print feature['hnr']
                     print feature['stn']
                     print Snobbery.calculateDistance(feature, layerEntrances)
-                    spamwriter.writerow([feature['stn'].encode('utf8'),feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
+                    try:
+                        encodedStn = feature['stn'].encode('utf8')
+                    catch(e):
+                        encodedStn = ""
+                    spamwriter.writerow(encodedStn,feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
+
                 counter += 1
 
         
