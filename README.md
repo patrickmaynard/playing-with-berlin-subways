@@ -31,7 +31,7 @@ https://github.com/patrickmaynard/playing-with-berlin-subways/blob/master/analyz
 
 Then update the two lines that load .shp files, pointing them at the places where you saved those files.
 
-Then update the location for the output csv file so that it points at your location of choice. 
+Then update the location for the output.csv file so that it points at your location of choice. 
 
 Now set the argument in the final line (calling the Snobbery.importAndAnalyze() function) to something much higher than 5 -- a million is usually safe, since most cities do not have anywhere near a million properties.
 
