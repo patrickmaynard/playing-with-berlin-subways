@@ -9,7 +9,7 @@ For a quick look at the source of my layer showing all Berlin properties, see th
 
 http://opendata.esri-de.opendata.arcgis.com/datasets/d4ac5d6ff99140819d2033038664096c_0
 
-For a quick look at how I got the second layer I needed (showing all subway entrances), see this Stack Exchange thread: 
+For a quick look at how I got the second layer I needed (a shp file showing all Berlin subway entrances), see this Stack Exchange thread: 
 
 http://gis.stackexchange.com/questions/214578/public-shp-file-showing-berlin-subway-entrances/
 
