@@ -75,7 +75,7 @@ class Snobbery(object):
         features = layerProperties.getFeatures()
         counter = 0
         featuresSelected = []
-        with open('/Users/patrickmaynard/Desktop/eggs.csv', 'wb') as csvfile:
+        with open('/Users/patrickmaynard/Desktop/output.csv', 'wb') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=',',
                                         quotechar='"', quoting=csv.QUOTE_NONNUMERIC)
             spamwriter.writerow(['STN','HNR', 'Lat','Lon', 'Distance'])
