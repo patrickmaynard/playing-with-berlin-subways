@@ -82,7 +82,7 @@ class Snobbery(object):
                     #print feature['hnr']
                     #print feature['stn']
                     #print Snobbery.calculateDistance(feature, layerEntrances)
-                    print "Processed record " + str(counter) + " out of about 375,339 records as of autumn 2016."
+                    print "Processed record " + str(counter) + " (out of about 375,339 records as of autumn 2016)."
                     try:
                         encodedStn = feature['stn'].encode('utf8')
                     except AttributeError:
