@@ -79,11 +79,10 @@ class Snobbery(object):
             spamwriter.writerow(['STN','HNR', 'Lat','Lon', 'Distance'])
             for feature in features:
                 if counter < rowLimit:
-                    #print feature['name']
-                    print feature['hnr']
-                    print feature['stn']
-                    print Snobbery.calculateDistance(feature, layerEntrances)
-                    print counter
+                    #print feature['hnr']
+                    #print feature['stn']
+                    #print Snobbery.calculateDistance(feature, layerEntrances)
+                    print "Processed record " + str(counter) + " out of about 375,339 records as of autumn 2016."
                     try:
                         encodedStn = feature['stn'].encode('utf8')
                     except AttributeError:
