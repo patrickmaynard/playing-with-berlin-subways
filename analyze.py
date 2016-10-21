@@ -65,9 +65,11 @@ class Snobbery(object):
     @staticmethod
     def importAndAnalyze(rowLimit = 3):
         layerProperties = iface.addVectorLayer("/Users/patrickmaynard/Downloads/Berlin_Hauskoordinaten_FServer_hosted/Berlin_Hauskoordinaten_FServer_hosted.shp", "Properties", "ogr")
+        #^See the README file for details on how to get this shp file. (It was too large to include in my GitHub repository.)
         if not layerProperties:
           print "layerProperties failed to load!"
         layerEntrances = iface.addVectorLayer("/Users/patrickmaynard/Documents/GitHub/playing-with-berlin-subways/subway-entrances.shp", "Entrances", "ogr")
+        #^See the README file for details on how to get an updated copy of this shp file. (I highly recommend getting the latest data.)
         if not layerEntrances:
           print "layerProperties failed to load!"
         features = layerProperties.getFeatures()
