@@ -1,11 +1,11 @@
 # playing-with-berlin-subways
-This repository holds code used to analyze all the properties in Berlin, calculating their proximity (or lack thereof) to subway entrances.
+This repository holds code used to analyze all the properties in the Berlin Hauskoordinaten data set, calculating their proximity (or lack thereof) to subway entrances.
 
-For a quick look at code I used for a similar task in NYC, see this snippet:
+For a quick look at code I used for a similar task in New York, see this snippet:
 
 https://github.com/patrickmaynard/playing-with-qgis-python/blob/master/test-eight.py
 
-For a quick look at the source of my layer showing all Berlin properties, see this ESRI page:
+For a quick look at the source of my layer showing Berlin properties, see this ESRI page:
 
 http://opendata.esri-de.opendata.arcgis.com/datasets/d4ac5d6ff99140819d2033038664096c_0
 
