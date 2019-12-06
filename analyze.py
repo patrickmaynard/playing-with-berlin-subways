@@ -15,22 +15,9 @@ Some logic is very obviously pulled straight from Python documentation. ("Spamwr
 
 See README.md at https://github.com/patrickmaynard/playing-with-berlin-subways for more information on finding shapefiles, a few selective credits, inspiration, etc.,.
 
-
-
-COMPLETED TODOs:
-x Import logic from https://github.com/patrickmaynard/playing-with-qgis-python/blob/master/test-eight.py
-x Update references to layer files so they don't reference NYC layers.
-x Get rid of "centroid" reference, since both layers are points now -- actually, this does no harm. Leave it as-is.
-x Fix fields that are printed.
-x Fix labels on the csv file.
-x Fix fields that are dumped to the csv file.
-x Add UTF8 encoding for street names.
-x Turn the csv-writing line back on.
-x See if this thing works!
-
 """
 
-class Snobbery(object):
+class Analyzer(object):
     @staticmethod
     def haversine(lon1, lat1, lon2, lat2):
         """
@@ -57,7 +44,7 @@ class Snobbery(object):
                 lonEntrance = featureEntrance.geometry().centroid().asPoint().x()
                 latProperty = featureProperty.geometry().centroid().asPoint().y()
                 lonProperty = featureProperty.geometry().centroid().asPoint().x()
-                currentDistance = Snobbery.haversine(lonEntrance, latEntrance, lonProperty, latProperty)
+                currentDistance = Analyzer.haversine(lonEntrance, latEntrance, lonProperty, latProperty)
                 if currentDistance < shortestDistance:
                     shortestDistance = currentDistance
         return shortestDistance
@@ -81,17 +68,14 @@ class Snobbery(object):
             spamwriter.writerow(['STN','HNR', 'Lat','Lon', 'Distance'])
             for feature in features:
                 if counter < rowLimit:
-                    #print feature['hnr']
-                    #print feature['stn']
-                    #print Snobbery.calculateDistance(feature, layerEntrances)
                     print "Processed record " + str(counter) + " (out of about 375,339 records as of autumn 2016)."
                     try:
                         encodedStn = feature['stn'].encode('utf8')
                     except AttributeError:
                         encodedStn = "NULL"
-                    spamwriter.writerow([encodedStn,feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Snobbery.calculateDistance(feature, layerEntrances)])
+                    spamwriter.writerow([encodedStn,feature['hnr'], feature.geometry().centroid().asPoint().y(),feature.geometry().centroid().asPoint().x(), Analyzer.calculateDistance(feature, layerEntrances)])
 
                 counter += 1
 
         
-Snobbery.importAndAnalyze(5)
+Analyzer.importAndAnalyze(10000000)
